@@ -17,8 +17,11 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
 .config(function ($mdThemingProvider) {
   $mdThemingProvider
-      .theme('myTheme')
-      .primaryPalette('brown')
+      .theme('default')
+      .primaryPalette('indigo')
+      .accentPalette('indigo')
+    .warnPalette('red');
+ /*     .primaryPalette('brown')
       .accentPalette('green')
       .warnPalette('red')
       .backgroundPalette('teal', {
@@ -27,9 +30,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         'hue-2': '200',
         'hue-3': '300'
 
-      });
+      });*/
 })
 
 .controller('sideNavCtrl', function ($scope, $timeout, $mdSidenav) {
 
-})
+});
