@@ -13,21 +13,51 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
   <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="own.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div ng-view></div>
+  <div ng-controller="sideNavCtrl" layout="column" ng-cloak style="height: 100%">
 
-  <div>Angular seed app: v<span app-version></span></div>
+
+    <section layout="row" flex>
+
+      <md-sidenav scroll
+              class="md-sidenav-left"
+              md-component-id="left"
+              md-is-locked-open="true"
+              md-whiteframe="4">
+
+        <md-toolbar  class="md-theme-indigo">
+          <h1 class="md-toolbar-tools">Projekt "Industrie 4.0"</h1>
+        </md-toolbar>
+        <md-content  layout-padding>
+          <md-button class="toolbareintraege" href="#!/view1">view1</md-button>
+          <md-button class="toolbareintraege" href="#!/view2">view2</md-button>
+        </md-content>
+
+      </md-sidenav>
+
+      <md-toolbar scroll> <!--scroll -->
+        <div class="md-toolbar-tools site-content-toolbar">
+        </div>
+      </md-toolbar>
+      <md-content flex layout-padding style="margin-top: 75px">
+
+
+        <md-button href="http://fuse-angular-material.withinpixels.com/dashboard-project">Beispieldesign an dem wir uns orientieren sollten!</md-button>
+        <div ng-view></div>
+      </md-content>
+
+
+    </section>
+
+  </div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -37,7 +67,6 @@
     <script src="bower_components/angular-material/angular-material.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
-  <
   <script src="app.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>

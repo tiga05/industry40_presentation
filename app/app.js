@@ -12,4 +12,24 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   $locationProvider.hashPrefix('!');
 
   $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+}])
+
+
+.config(function ($mdThemingProvider) {
+  $mdThemingProvider
+      .theme('myTheme')
+      .primaryPalette('brown')
+      .accentPalette('green')
+      .warnPalette('red')
+      .backgroundPalette('teal', {
+        'default': '50',
+        'hue-1': '100',
+        'hue-2': '200',
+        'hue-3': '300'
+
+      });
+})
+
+.controller('sideNavCtrl', function ($scope, $timeout, $mdSidenav) {
+
+})

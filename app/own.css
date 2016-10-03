@@ -1,0 +1,12 @@
+.toolbareintraege{
+    width: 100%;
+    min-height: 75px;
+    margin: 0px 0px;
+    line-height: 6;
+}
+
+[scroll] {
+    position:fixed;
+    top:0;
+
+}
