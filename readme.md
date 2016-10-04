@@ -7,6 +7,7 @@ Zur Nutzung dieser Seite müssen folgende Schritte durchgeführt werden:
 5. ```npm start``` eingeben
 6. Die Webanwendung ist nun über localhost:8000 erreichbar.
 
+Weiteres:(für die Installation nicht notwendig)
 
 Weitere Pakete können mit ```bower install PAKETNAME``` oder ```npm install PAKETNAME``` hinzugefügt werden(je nachdem, wo das entsprechende Paket zur Verfügung steht). Um diese als Dependency für das Projekt zu definieren (um also zu erzwingen, dass alle anderen die das Projekt über Github laden, diese Pakete auch brauchen), muss ein ```--save``` an der Installation angehangen werden. 
 z.B. : ```bower install angular-material --save```.
