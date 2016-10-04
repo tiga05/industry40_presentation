@@ -1,76 +1,81 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Projekt Industrie 4.0</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--<base href="/"/>-->
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
-  <link rel="stylesheet" href="app.css">
-  <link rel="stylesheet" href="own.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Projekt Industrie 4.0</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<base href="/"/>-->
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="own.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
+<body ng-controller="mainController">
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
 
-  <div ng-controller="sideNavCtrl" layout="column" ng-cloak style="height: 100%">
-
-
-    <section layout="row" flex>
-
-      <md-sidenav scroll
-              class="md-sidenav-left"
-              md-component-id="left"
-              md-is-locked-open="true"
-              md-whiteframe="4">
-
-        <md-toolbar  class="md-theme-indigo">
-          <h1 class="md-toolbar-tools">Projekt "Industrie 4.0"</h1>
-        </md-toolbar>
-        <md-content  layout-padding>
-          <md-button class="toolbareintraege md-accent" href="#!/view1">view1</md-button>
-          <md-button class="toolbareintraege md-accent" href="#!/view2">view2</md-button>
-        </md-content>
-      </md-sidenav>
-
-      <md-toolbar scroll> <!--scroll -->
+<div layout="column" ng-cloak style="height: 100%">
+    <md-toolbar scroll> <!--scroll -->
         <div class="md-toolbar-tools site-content-toolbar">
+            <!-- fill up the space between left and right area -->
+            <md-button class="md-icon-button" ng-click="toggleLeft()">
+                <i class="material-icons">menu</i>
+                <!--<md-icon class="material-icons">menu</md-icon>-->
+            </md-button>
+            <span flex></span>
         </div>
-      </md-toolbar>
-      <md-content flex layout-padding style="margin-top: 75px">
+    </md-toolbar>
+    <section layout="row" flex>
+        <md-sidenav scroll class="md-sidenav-left
+        md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-xs')">
+            <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">Projekt "Industrie 4.0"</h1>
+            </md-toolbar>
+            <md-content layout-padding>
+                <md-button class="toolbareintraege md-accent" href="#!/view1" ng-click="toggleLeft()">view1</md-button>
+                <md-button class="toolbareintraege md-accent" href="#!/view2" ng-click="toggleLeft()">view2</md-button>
+            </md-content>
+        </md-sidenav>
+        <md-content flex layout-padding style="margin-top: 75px">
 
 
-        <md-button class="md-raised md-warn" href="http://fuse-angular-material.withinpixels.com/dashboard-project">Beispieldesign an dem wir uns orientieren sollten!</md-button>
-        <div ng-view></div>
-      </md-content>
-
-
+            <md-button class="md-raised md-warn" href="http://fuse-angular-material.withinpixels.com/dashboard-project">
+                Beispieldesign an dem wir uns orientieren sollten!
+            </md-button>
+            <div ng-view></div>
+        </md-content>
     </section>
 
-  </div>
+</div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-material/angular-material.js"></script>
-  <script src="bower_components/angular-aria/angular-aria.js"></script>
-  <script src="bower_components/angular-animate/angular-animate.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="app.js"></script>
+<script src="view1/view1.js"></script>
+<script src="view2/view2.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
 </body>
 </html>

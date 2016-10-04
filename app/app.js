@@ -18,8 +18,8 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 .config(function ($mdThemingProvider) {
   $mdThemingProvider
       .theme('default')
-      .primaryPalette('indigo')
-      .accentPalette('indigo')
+      .primaryPalette('orange')
+      .accentPalette('deep-orange')
     .warnPalette('red');
  /*     .primaryPalette('brown')
       .accentPalette('green')
@@ -33,6 +33,22 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
       });*/
 })
 
-.controller('sideNavCtrl', function ($scope, $timeout, $mdSidenav) {
+.controller('mainController', function ($scope, $mdSidenav, $log) {
 
-});
+$scope.toggleLeft = buildToggler('left');
+
+function buildToggler(navID) {
+  return function () {
+    $mdSidenav(navID)
+        .toggle()
+        .then(function () {
+          $log.debug("toggle " + navID + " is done");
+        });
+  }
+}//buildtoggler
+
+
+$scope.close = function () {
+  $mdSidenav('left').close();
+}});
+
