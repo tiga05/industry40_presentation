@@ -8,4 +8,4 @@ Zur Nutzung dieser Seite müssen folgende Schritte durchgeführt werden:
 6. Die Webanwendung ist nun über localhost:8000 erreichbar.
 
 
-Weitere Pakete können mit "bower install PAKETNAME" oder "npm install PAKETNAME" hinzugefügt werden. Um diese als Dependency für das Projekt zu definieren (um also zu erzwingen, dass alle anderen die das Projekt über Github laden, diese Pakete auch brauchen), muss ein --save an der Installation angehangen werden. z.B. : "bower install angular-material --save"
+Weitere Pakete können mit ```"bower install PAKETNAME"``` oder "npm install PAKETNAME" hinzugefügt werden. Um diese als Dependency für das Projekt zu definieren (um also zu erzwingen, dass alle anderen die das Projekt über Github laden, diese Pakete auch brauchen), muss ein --save an der Installation angehangen werden. z.B. : "bower install angular-material --save"
