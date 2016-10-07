@@ -1,13 +1,13 @@
-<md-content class="md-padding" layout-sm="column" layout="row">
+<md-content class="md-padding md-primary" layout-sm="column" layout="row">
     <div flex-xs flex-gt-xs="50" layout="column" ng-repeat="entries in cardRow">
-        <md-card>
+        <md-card class="md-accent">
             <md-card-title>
                 <md-card-title-text >
                     <span class="md-headline">{{entries.name}}</span>
                 </md-card-title-text>
             </md-card-title>
             <md-card-content>
-                <h1 style="text-align: center">1</h1>
+                <h1 style="text-align: center">{{entries.value}}</h1>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button class="md-raised">Höchste</md-button>
@@ -43,7 +43,7 @@
                 </md-card-title-text>
             </md-card-title>
             <md-card-content>
-                <h1 style="text-align: center">1</h1>
+                <h1 style="text-align: center">...</h1>
             </md-card-content>
             <canvas id="line" class="chart chart-line" chart-data="data"
                     chart-labels="labels" chart-series="series" chart-options="options"

@@ -9,21 +9,34 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', function($scope) {
+.controller('View1Ctrl', ['$scope','$interval', function($scope,$interval) {
   $scope.cardRow = [
-    {name: 'Temp1', descr: 'irgendein Text 1'},
-    {name: 'Temp2', descr: 'irgendein Text 2'},
-    {name:'Temp3',descr:'irgendein Text 3'},
-    {name: 'Wert x',descr:'blaaaa'}
+    {name: 'Temp1', descr: 'irgendein Text 1', value:0},
+    {name: 'Temp2', descr: 'irgendein Text 2', value:0},
+    {name:'Temp3',descr:'irgendein Text 3', value:0},
+    {name: 'Wert x',descr:'blaaaa', value:0}
   ];
 
   $scope.chartRow = [
     {name: 'Chart1', descr: 'irgendein Text 1'},
-    {name: 'Chart1', descr: 'irgendein Text 2'},
-    {name: 'Chart1',descr:'irgendein Text 3'},
-    {name: 'Wert x',descr:'blaaaa'}
+  //  {name: 'Chart1', descr: 'irgendein Text 2'},
+  //  {name: 'Chart1',descr:'irgendein Text 3'},
+  //  {name: 'Wert x',descr:'blaaaa'}
   ];
 
+
+  function update() {
+      for(var i=0;i< $scope.cardRow.length;i++){
+          $scope.cardRow[i].value=Math.round((Math.random() * 10) * 10);
+      }
+    //$scope.randomNumber = Math.round((Math.random() * 10) * 10);
+  }
+  $interval(update, 1000);
+
+
+  $scope.changeData=function(){
+
+  };
 
   $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
   $scope.series = ['Series A', 'Series B'];
