@@ -13,3 +13,11 @@ Weitere Pakete können mit ```bower install PAKETNAME``` oder ```npm install PAK
 z.B. : ```bower install angular-material --save```.
 
 Diese Installationen gelten nur in diesem Projekt. In anderen Projekten steht bower oder deren Abhängigkeit nicht zur Verfügung und muss neuinstalliert werden. Mit dem Befehl ```--g``` bei einer Installation werden die Pakete global installiert danach steht z.B. der Befehl ```bower``` in jeder CMD und jedem Projekt zur Verfügung und muss nicht erneut installiert werden.
+
+
+## Nützliche Links für Animationen und drumherum
+
+http://www.angularjs4u.com/modules/top-5-graphs-charts-angularjs-modules/
+https://blog.zingchart.com/2015/11/09/angularjs-chart-examples/
+https://codepen.io/baliw/pen/GJydZM
+http://plnkr.co/edit/SYgfQTTEC2XD1OA0ZReV?p=preview

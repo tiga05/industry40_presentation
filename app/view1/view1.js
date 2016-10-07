@@ -28,43 +28,47 @@ angular.module('myApp.view1', ['ngRoute'])
   function update() {
       for(var i=0;i< $scope.cardRow.length;i++){
           $scope.cardRow[i].value=Math.round((Math.random() * 10) * 10);
+
       }
+      //for(var i=0;i<10;i++){
+            for(var z=0;z<$scope.data.length;z++){
+                $scope.data[z]=$scope.data[z+1];
+            }
+          $scope.data[$scope.data.length-1]=Math.round((Math.random() * 10) * 10);
+    //  }
     //$scope.randomNumber = Math.round((Math.random() * 10) * 10);
   }
   $interval(update, 1000);
 
-
-  $scope.changeData=function(){
-
-  };
-
-  $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-  $scope.series = ['Series A', 'Series B'];
-  $scope.data = [
-    [65, 59, 80, 81, 56, 55, 40],
-    [28, 48, 40, 19, 86, 27, 90]
-  ];
+  $scope.labels = [1,2,3,4,5,6,7,8,9,10];
+  $scope.series = ['Series A'];
+  $scope.data = [    0, 0, 0, 0, 0, 0, 0,0,0,0];
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
   };
-  $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+  $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }];
   $scope.options = {
+      animation: false,
+
     scales: {
       yAxes: [
         {
+
           id: 'y-axis-1',
           type: 'linear',
           display: true,
-          position: 'left'
-        },
-        {
-          id: 'y-axis-2',
-          type: 'linear',
-          display: true,
-          position: 'right'
+          position: 'left',
+
         }]
     }
-  }
-
-
+  };
+  //the following is NOT WORKING!
+/*$scope.colours=[{ // default
+        fillColor: "rgba(224, 108, 112, 1)",
+        strokeColor: "rgba(207,100,103,1)",
+        pointColor: "rgba(220,220,220,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(151,187,205,0.8)"
+    }];*/
 }]);
