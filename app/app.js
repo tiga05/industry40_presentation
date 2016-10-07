@@ -6,7 +6,8 @@ angular.module('myApp', [
   'ngMaterial',
   'myApp.view1',
   'myApp.view2',
-  'myApp.version'
+  'myApp.version',
+    'chart.js'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
@@ -34,6 +35,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 })
 
 .controller('mainController', function ($scope, $mdSidenav, $log) {
+
 
 $scope.toggleLeft = buildToggler('left');
 

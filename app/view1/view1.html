@@ -1,1 +1,54 @@
-Das ist die View 1!
+<md-content class="md-padding" layout-sm="column" layout="row">
+    <div flex-xs flex-gt-xs="50" layout="column" ng-repeat="entries in cardRow">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text >
+                    <span class="md-headline">{{entries.name}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <h1 style="text-align: center">1</h1>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-raised">Höchste</md-button>
+                <md-button class="md-raised">Durchschnitt</md-button>
+            </md-card-actions>
+        </md-card>
+   <!--     <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{entries.name}}</span>
+                    <span class="md-subhead">{{entries.descr}}</span>
+                    <h1>1</h1>
+                </md-card-title-text>
+                <md-card-title-media>
+                    <div class="md-media-sm card-media"></div>
+                </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-raised">Höchste</md-button>
+                <md-button class="md-raised">Durchschnitt</md-button>
+            </md-card-actions>
+        </md-card>-->
+
+    </div>
+
+</md-content>
+<md-content>
+    <div flexlayout="column" ng-repeat="charts in chartRow">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text >
+                    <span class="md-headline">{{charts.name}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <h1 style="text-align: center">1</h1>
+            </md-card-content>
+            <canvas id="line" class="chart chart-line" chart-data="data"
+                    chart-labels="labels" chart-series="series" chart-options="options"
+                    chart-dataset-override="datasetOverride" chart-click="onClick"
+            </canvas>
+        </md-card>
+    </div>
+</md-content></md>
