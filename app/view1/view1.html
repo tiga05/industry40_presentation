@@ -1,6 +1,6 @@
 <md-content class="md-padding md-primary" layout-xs="column" layout="row">
-    <div flex flex-xs flex-gt-xs="50" layout="column" ng-repeat="entries in cardRow">
-        <md-card class="md-accent" ng-class="{ 'red' : entries.color, 'white': entries.color }">
+    <div flex   layout="row" layout-sm="column" layout-xs="column">
+        <md-card  flex ng-repeat="entries in cardRow" ng-class="entries.color" /*ng-class="{ 'red' : entries.color, 'white': entries.color }"*\>
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">{{entries.name}}</span>
@@ -11,21 +11,16 @@
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
                 <md-button class="md-icon-button  md-accent md-raised">
-                    <md-tooltip md-direction="top">
-                        Maximum
-                    </md-tooltip>
+                    <md-tooltip md-direction="top">Maximum</md-tooltip>
                     <i class="material-icons">arrow_upward</i></md-button>
                 <md-button class="md-icon-button md-raised md-accent">
-                    <md-tooltip md-direction="top">
-                        Durchschnitt
-                    </md-tooltip>
+                    <md-tooltip md-direction="top">Durchschnitt</md-tooltip>
                     <i class="material-icons">trending_flat</i>
                 </md-button>
                 <md-button class="md-icon-button md-raised md-accent">
-                    <md-tooltip md-direction="top">
-                        Aktuell
-                    </md-tooltip>
-                    <i class="material-icons">autorenew</i></md-button>
+                    <md-tooltip md-direction="top">Aktuell</md-tooltip>
+                    <i class="material-icons">autorenew</i>
+                </md-button>
             </md-card-actions>
         </md-card>
         <!--     <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
@@ -50,7 +45,7 @@
 </md-content>
 <md-content>
     <div layout="row" layout-xs="column" ng-repeat="charts in chartRow">
-        <md-card flex>
+        <md-card flex >
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">{{charts.name}}</span>
@@ -79,3 +74,6 @@
         </md-card>
     </div>
 </md-content>
+<md-button class="md-accent">TEST</md-button>
+<md-button class="md-warn">TEST</md-button>
+<md-button class="md-primary">TEST</md-button>

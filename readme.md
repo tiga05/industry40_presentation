@@ -21,3 +21,7 @@ http://www.angularjs4u.com/modules/top-5-graphs-charts-angularjs-modules/
 https://blog.zingchart.com/2015/11/09/angularjs-chart-examples/
 https://codepen.io/baliw/pen/GJydZM
 http://plnkr.co/edit/SYgfQTTEC2XD1OA0ZReV?p=preview
+
+Beispieldesign, an dem wir uns orientieren sollten:
+
+http://fuse-angular-material.withinpixels.com/dashboard-project

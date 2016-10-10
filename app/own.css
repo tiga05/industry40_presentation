@@ -10,9 +10,23 @@
     top:0;
 
 }
-.red{
-    background-color: red;
-}
+
 .white{
     background-color: white;
+}
+.green{
+    background-color:#a3e9a4;
+}
+.yellow{
+    background-color: #FFF9C4;
+}
+.orange{
+    background-color: rgba(255,110,64,0.3);
+}
+.red{
+    background-color: rgba(244,67,54,0.3);
+}
+
+#test{
+
 }

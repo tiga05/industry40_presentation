@@ -27,13 +27,21 @@ angular.module('myApp.view1', ['ngRoute'])
         function update() {
             for (var i = 0; i < $scope.cardRow.length; i++) {
                 $scope.cardRow[i].value = Math.round((Math.random() * 10) * 10);
-                if(  $scope.cardRow[i].value>60){
-                    $scope.cardRow[i].color='red';
+                var value =$scope.cardRow[i].value;
+                switch(true) {
+                    case (value > 80):
+                        $scope.cardRow[i].color = 'red';
+                        break;
+                    case (value > 60):
+                        $scope.cardRow[i].color = 'orange';
+                        break;
+                    case (value > 40):
+                        $scope.cardRow[i].color = 'yellow';
+                        break;
+                    default:
+                        $scope.cardRow[i].color = 'green';
+                        break;
                 }
-                else if($scope.cardRow[i].value <60){
-                    $scope.cardRow[i].color='white';
-                }
-
             }
             for (var z = 0; z < $scope.chart1.data.length; z++) {
                 $scope.chart1.data[z] = $scope.chart1.data[z + 1];
@@ -88,7 +96,7 @@ angular.module('myApp.view1', ['ngRoute'])
         $scope.onClick = function (points, evt) {
             console.log(points, evt);
         };
-
+    $scope.testclass="red";
         //the following is NOT WORKING!
         /*$scope.colours=[{ // default
          fillColor: "rgba(224, 108, 112, 1)",
