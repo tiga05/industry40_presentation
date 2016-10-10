@@ -23,29 +23,11 @@
                 </md-button>
             </md-card-actions>
         </md-card>
-        <!--     <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
-                 <md-card-title>
-                     <md-card-title-text>
-                         <span class="md-headline">{{entries.name}}</span>
-                         <span class="md-subhead">{{entries.descr}}</span>
-                         <h1>1</h1>
-                     </md-card-title-text>
-                     <md-card-title-media>
-                         <div class="md-media-sm card-media"></div>
-                     </md-card-title-media>
-                 </md-card-title>
-                 <md-card-actions layout="row" layout-align="end center">
-                     <md-button class="md-raised">Höchste</md-button>
-                     <md-button class="md-raised">Durchschnitt</md-button>
-                 </md-card-actions>
-             </md-card>-->
-
     </div>
-
 </md-content>
 <md-content>
-    <div layout="row" layout-xs="column" ng-repeat="charts in chartRow">
-        <md-card flex >
+    <div layout="row" layout-sm="column" layout-xs="column">
+        <md-card flex ng-repeat="charts in chartRow">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">{{charts.name}}</span>
@@ -54,26 +36,10 @@
             <md-card-content>
                 <h1 style="text-align: center">...</h1>
             </md-card-content>
-            <canvas class="chart chart chart-bar" chart-data="chart1.data"
-                    chart-labels="chart1.labels" chart-series="series" chart-options="chart1.options"
-                    chart-dataset-override="chart1.datasetOverride" chart-click="onClick">
-            </canvas>
-        </md-card>
-        <md-card flex>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">Chart 2</span>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-content>
-                <h1 style="text-align: center">...</h1>
-            </md-card-content>
-            <canvas class="chart chart chart-line" chart-data="chart2.data"
-                    chart-labels="chart2.labels" chart-options="chart2.options">
+            <canvas  class="chart-base" chart-data="charts.data" chart-type="charts.type"
+                    chart-labels="charts.labels" chart-series="series" chart-options="charts.options"
+                    chart-dataset-override="charts.datasetOverride" chart-click="onClick">
             </canvas>
         </md-card>
     </div>
 </md-content>
-<md-button class="md-accent">TEST</md-button>
-<md-button class="md-warn">TEST</md-button>
-<md-button class="md-primary">TEST</md-button>
