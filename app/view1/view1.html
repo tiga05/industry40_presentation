@@ -1,27 +1,28 @@
 <md-content class="md-padding md-primary" layout-xs="column" layout="row">
-    <div flex   layout="row" layout-sm="column" layout-xs="column">
-        <md-card  flex ng-repeat="entries in cardRow" ng-class="entries.color" /*ng-class="{ 'red' : entries.color, 'white': entries.color }"*\>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">{{entries.name}}</span>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-content>
-                <h1 style="text-align: center">{{entries.value}}</h1>
-            </md-card-content>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-button class="md-icon-button  md-accent md-raised">
-                    <md-tooltip md-direction="top">Maximum</md-tooltip>
-                    <i class="material-icons">arrow_upward</i></md-button>
-                <md-button class="md-icon-button md-raised md-accent">
-                    <md-tooltip md-direction="top">Durchschnitt</md-tooltip>
-                    <i class="material-icons">trending_flat</i>
-                </md-button>
-                <md-button class="md-icon-button md-raised md-accent">
-                    <md-tooltip md-direction="top">Aktuell</md-tooltip>
-                    <i class="material-icons">autorenew</i>
-                </md-button>
-            </md-card-actions>
+    <div flex layout="row" layout-sm="column" layout-xs="column">
+        <md-card flex ng-repeat="entries in cardRow" ng-class="entries.color"
+        /*ng-class="{ 'red' : entries.color, 'white': entries.color }"*\>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{entries.name}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <h1 style="text-align: center">{{entries.value}}</h1>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-icon-button  md-accent md-raised">
+                <md-tooltip md-direction="top">Maximum</md-tooltip>
+                <i class="material-icons">arrow_upward</i></md-button>
+            <md-button class="md-icon-button md-raised md-accent">
+                <md-tooltip md-direction="top">Durchschnitt</md-tooltip>
+                <i class="material-icons">trending_flat</i>
+            </md-button>
+            <md-button class="md-icon-button md-raised md-accent">
+                <md-tooltip md-direction="top">Aktuell</md-tooltip>
+                <i class="material-icons">autorenew</i>
+            </md-button>
+        </md-card-actions>
         </md-card>
     </div>
 </md-content>
@@ -36,7 +37,7 @@
             <md-card-content>
                 <h1 style="text-align: center">...</h1>
             </md-card-content>
-            <canvas  class="chart-base" chart-data="charts.data" chart-type="charts.type"
+            <canvas class="chart-base" chart-data="charts.data" chart-type="charts.type"
                     chart-labels="charts.labels" chart-series="series" chart-options="charts.options"
                     chart-dataset-override="charts.datasetOverride" chart-click="onClick">
             </canvas>

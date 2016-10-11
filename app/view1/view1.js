@@ -16,7 +16,7 @@ angular.module('myApp.view1', ['ngRoute'])
             {name: 'Milling Heat', color: 'white', value: 0},
             {name: 'Milling Speed', color: 'white', value: 0}
         ];
-        $scope.type = 'line';
+        $scope.type = ['bar','line','pie','doughnut','radar'];
         $scope.chartRow = [
             {
                 name: 'Chart1',
@@ -87,12 +87,11 @@ angular.module('myApp.view1', ['ngRoute'])
                 for (var z = 0; z < $scope.chartRow[y].data.length; z++) {
                     $scope.chartRow[y].data[z] = $scope.chartRow[y].data[z + 1];
                 }
-                $scope.chartRow[y].data[z -1] = Math.round((Math.random() * 10) * 10);
+                $scope.chartRow[y].data[z - 1] = Math.round((Math.random() * 10) * 10);
             }
         }
 
         $interval(update, 1000);
-//erstes Chart
         $scope.onClick = function (points, evt) {
             console.log(points, evt);
         };
